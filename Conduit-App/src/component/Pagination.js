@@ -11,7 +11,7 @@ function Pagination(props){
         <div className="flex align-center justify-center pagination">
             <p onClick={()=>{currentPageIndex(activePageIndex-1<1?1:activePageIndex-1)}}>Prev</p>
             <div className="pagination-count">
-            {pages.map(page=><span key={page} className={activePageIndex===page?'activePage':''} onClick={()=>{currentPageIndex(page)}}>{page}</span>)}
+            {pages.map(page=><span id={`page${page}`} key={page} className={activePageIndex===page?'activePage':''} onClick={()=>{currentPageIndex(page)}}>{page}</span>)}
             </div>
             <p onClick={()=>{currentPageIndex(activePageIndex+1>noOfpages?noOfpages:activePageIndex+1)}}>Next</p>
         </div>

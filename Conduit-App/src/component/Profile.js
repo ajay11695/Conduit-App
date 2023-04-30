@@ -3,6 +3,7 @@ import { useState ,useEffect} from "react";
 import { articlesURL, getProfileURL } from "../utils/constant";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
+import Footer from "./Footer";
 
 function Profile(props) {
     let [state,setState]=useState({
@@ -100,6 +101,7 @@ function Profile(props) {
                 </nav>
                 {articles===null ? <h1>No Article Found</h1> : <Posts articles={articles} currentUser={props.user} setState={setState}/>}
             </div>
+                {articles ? articles.length>1?<Footer/>:<div className="footer-position"><Footer/></div>:''}
         </div>
     )
 }

@@ -2,6 +2,7 @@ import { useState } from "react"
 import { articlesURL } from "../utils/constant"
 import React from "react"
 import { useNavigate } from "react-router"
+import Footer from "./Footer";
 
 function NewPost(props) {
     let navigate=useNavigate()
@@ -71,6 +72,7 @@ function NewPost(props) {
 
                 </form>
             </div>
+            <div className="footer-position"><Footer/></div>
 
         </>
     )

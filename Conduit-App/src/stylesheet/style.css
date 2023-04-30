@@ -1,4 +1,6 @@
-
+body{
+    /* position: relative; */
+}
 
 /* header */
 
@@ -124,10 +126,18 @@ nav .active {
 }
 
 .pagination span {
-    border: 1px solid rgb(92, 184, 92);
+    border-left: 1px solid rgb(92, 184, 92);
     color: rgb(92, 184, 92);
-    padding: 5px 10px;
+    padding: 8px 12px;
     font-weight: 600;
+}
+
+.pagination #page1{border-left: 0;}
+.pagination-count{
+    border: 1px solid rgb(92, 184, 92);
+    padding: 8px 0px;
+    border-radius: 5px;
+    margin: 0 .2rem;
 }
 
 .pagination .activePage {
@@ -138,7 +148,7 @@ nav .active {
 /* signin */
 .forms {
     width: 500px;
-    margin: 5rem auto;
+    margin: 4rem auto;
     border: 1px solid;
     padding: 1rem;
 }
@@ -212,12 +222,16 @@ nav .active {
 .logoutbtn:hover {
     background-color: tomato;
     color: white;
+    margin-bottom: 1rem;
 }
 
 footer {
     background-color: rgb(218, 220, 221);
-    padding: 2rem 0;
-    /* position: absolute; */
-    /* bottom: 0; */
-    /* width: 100%; */
+    padding: 1.2rem 0;
+}
+
+.footer-position{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
