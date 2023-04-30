@@ -3,6 +3,7 @@ import { articlesURL } from "../utils/constant"
 import React from "react"
 import { useNavigate } from "react-router"
 import { useParams } from "react-router"
+import Footer from "./Footer";
 
 function EditPost(props) {
     const navigate=useNavigate()
@@ -85,7 +86,7 @@ function EditPost(props) {
 
                 </form>
             </div>
-
+            <div className="footer-position"><Footer/></div>
         </>
     )
 }

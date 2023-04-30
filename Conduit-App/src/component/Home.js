@@ -91,7 +91,7 @@ function Home (props){
         if (props.currentUser) {
             setState(prevState=>({...prevState,activeloginTab:''}))
         }
-        setState(prevState=>({...prevState,activeTab:tag}))
+        setState(prevState=>({...prevState,activeTab:tag,activePageIndex:1}))
     }
 
     
@@ -108,7 +108,7 @@ function Home (props){
                     </div>
                     <Tags addTab={addTab}/>
                 </section>
-                {articles && <Footer/>}
+                {articles ? articles.length>1?<Footer/>:<div className="footer-position"><Footer/></div>:''}
             </>
         )
 }

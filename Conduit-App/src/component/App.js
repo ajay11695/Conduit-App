@@ -1,12 +1,10 @@
 import { Routes, Route } from "react-router-dom";
-// import { useNavigate } from "react-router-dom";
 import { Header } from "./Header";
 import Home from "./Home";
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
 import { NoMatch } from "./NoMatch";
 import SingleArticle from "./SingleArticle";
-// import Footer from "./component/Footer";
 import { useEffect, useState } from "react";
 import { localStorageKey } from "../utils/constant";
 import { userVerifyURL } from "../utils/constant";
@@ -15,7 +13,7 @@ import NewPost from "./NewPost";
 import Setting from "./Setting";
 import Profile from "./Profile";
 import EditPost from "./EditPost";
-// import { dataContext } from "./component/BlogContext";
+import ErrorBoundary from "./ErrorBoundary";
 
 function App() {
   let [isLogged, setIsLogged] = useState(false)
@@ -66,17 +64,19 @@ function App() {
   return (
     <>
       <Header user={user} isLogged={isLogged} />
-      <Routes>
-        <Route path='/' element={<Home currentUser={user} />} />
-        <Route path='/profiles/:username' element={<Profile user={user} />} />
-        <Route path='/article/:slug' element={<SingleArticle user={user} />} />
-        <Route path='*' element={<NoMatch />} />
-        <Route path='/new-post' element={<NewPost user={user} />} />
-        <Route path='/article/:slug/edit' element={<EditPost user={user} />} />
-        <Route path='/setting' element={<Setting user={user} updateUser={updateUser} />} />
-        <Route path='/signin' element={<SignIn updateUser={updateUser} />} />
-        <Route path='/signup' element={<SignUp updateUser={updateUser} />} />
-      </Routes>
+      <ErrorBoundary>
+        <Routes>
+          <Route path='/' element={<Home currentUser={user} />} />
+          <Route path='/profiles/:username' element={<Profile user={user} />} />
+          <Route path='/article/:slug' element={<SingleArticle user={user} />} />
+          <Route path='*' element={<NoMatch />} />
+          <Route path='/new-post' element={<NewPost user={user} />} />
+          <Route path='/article/:slug/edit' element={<EditPost user={user} />} />
+          <Route path='/setting' element={<Setting user={user} updateUser={updateUser} />} />
+          <Route path='/signin' element={<SignIn updateUser={updateUser} />} />
+          <Route path='/signup' element={<SignUp updateUser={updateUser} />} />
+        </Routes>
+      </ErrorBoundary>
     </>
   );
 }

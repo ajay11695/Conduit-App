@@ -1,9 +1,8 @@
 import React, { useState } from "react"
 import validation from "../utils/validation"
 import { loginURL } from "../utils/constant"
-// import withRouter from "../utils/withRouter"
 import { useNavigate } from "react-router"
-
+import Footer from "./Footer";
 
 
 function SignIn (props){
@@ -95,6 +94,7 @@ function SignIn (props){
                     value='Sign in'/>
                 </div>
                </form>
+               <div className="footer-position"><Footer/></div>
             </>
         )
         

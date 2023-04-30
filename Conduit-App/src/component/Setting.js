@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router"
 import { updateUserURL } from "../utils/constant"
-
+import Footer from "./Footer";
 
 function Setting(props) {
     const navigate=useNavigate()
@@ -69,11 +69,10 @@ function Setting(props) {
                     <button onClick={()=>{
                         localStorage.clear()
                         navigate("/")
-                        window.location.reload()
-                    }} className="logoutbtn font-1 red">or click here logout</button>
+                    }} className="logoutbtn font-1 red ">or click here logout</button>
                 </div>
             </div>
-
+            <div className="footer-position"><Footer/></div>
         </>
     )
 }
